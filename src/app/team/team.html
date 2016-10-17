@@ -1,0 +1,42 @@
+
+<div class="col-md-12 accent">
+
+  <md-grid-list  cols="6" rowHeight="200px"  >
+     
+            <md-grid-tile id="custom-div" class="md-elevation-z8" *ngFor="let person of persons" [colspan]="3" [rowspan]="2" >
+                  <div class="contact">{{ person.firstName }} {{ person.lastName }}</div>                           
+                 <div  class="col-md-12 text-center" [@visibilityChanged]="(personId == person.id && (teamPage | async)  == page.Personal ) 
+                       || (personId != person.id && (person.page == page.Personal || person.page == null))">
+                    <a class="col-md-12" class="profile-spot no-border" >
+                          <img  src="{{person.photo}}" class="img" />
+                    </a>
+                </div>
+                <div  class="col-md-12" [@visibilityChanged]="(personId == person.id && (teamPage | async)  == page.Skills) 
+                      || (personId != person.id && person.page == page.Skills)"  >
+                    <p>Show me your skills here...</p>
+                </div>
+                 <div  class="col-md-12" [@visibilityChanged]="(personId == person.id && (teamPage | async)  == page.Contact) 
+                       || (personId != person.id && person.page == page.Contact) "  >
+                    <p>Contact me here...</p>
+                </div>
+                <md-grid-tile-footer>
+                 <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeTeamPage(page.Personal, person)">
+                    <i class="material-icons white">person_pin</i>                            
+                </button> 
+                 </div>
+                <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeTeamPage(page.Skills, person)">
+                    <i class="material-icons white">school</i>                            
+                </button> 
+                 </div>
+                 <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeTeamPage(page.Contact, person)">
+                    <i class="material-icons white">contact_mail</i>                            
+                </button> 
+                 </div>
+            </md-grid-tile-footer>
+                   </md-grid-tile>  
+  </md-grid-list>
+     
+    </div>

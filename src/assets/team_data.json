@@ -1,0 +1,4 @@
+[
+    {"id": 1, "firstName":"Miodrag", "lastName":"Pavkovic", "photo": "assets/images/mio5.jpg", "email": "mpavkovic@gmail.com"},
+    {"id": 2, "firstName":"Miroslav", "lastName":"Pavkovic", "photo": "assets/images/miroslav.jpg", "email": "mpavkovic@gmail.com"}
+]

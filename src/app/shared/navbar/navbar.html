@@ -1,0 +1,20 @@
+<md-toolbar class="md-accent">
+        <div class="col-md-2">
+             <div class="c" p>{{brand}}</div>
+        </div>
+        <div class="col-md-1 ">
+        <button  md-raised-button [routerLink]="['/']" class="col-md-2 pull-right">
+            <i class="material-icons white">home</i>                            
+        </button>       
+        </div>
+        <div class="col-md-1">
+        <button  md-raised-button class="col-md-2" [routerLink]="['/team']">
+            <i class="material-icons white">people_outline</i>                        
+        </button>
+        </div>
+        <div class="col-md-1">
+        <button  md-raised-button class="col-md-2" [routerLink]="['/todolist']">
+            <i class="material-icons white">business</i>                        
+        </button>
+        </div>
+    </md-toolbar>

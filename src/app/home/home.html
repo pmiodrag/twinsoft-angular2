@@ -1,0 +1,39 @@
+<div class="col-md-12">
+    <md-grid-list  cols="1" rowHeight="200px">     
+        <md-grid-tile  id="custom-div" *ngFor="let companyInfo  of company" [colspan]="1" [rowspan]="2" > 
+               <div class="contact">{{ companyInfo.name }} </div>                           
+                 <div  class="col-md-12 text-center" [@visibilityChanged]="(companyPage | async)  == page.About">
+                    <a class="col-md-12" class="profile-spot no-border" >
+                          <img  src="{{companyInfo.photo}}" class="img" />
+                    </a>
+                    <p>{{companyInfo.description}}</p>
+                </div>
+                <div  class="col-md-12" [@visibilityChanged]="(companyPage | async)  == page.Projects"  >
+                    <p>Show me your Projects here...</p>
+                    {{companyInfo.projects}}
+                </div>
+                 <div  class="col-md-12" [@visibilityChanged]="(companyPage | async)  == page.Contact"  >
+                    <p>Contact me here...</p>
+                      {{companyInfo.email}}
+                </div>
+                <md-grid-tile-footer>
+                 <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeComapanyPage(page.About)">
+                    <i class="material-icons white">person_pin</i>                            
+                </button> 
+                 </div>
+                <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeComapanyPage(page.Projects)">
+                    <i class="material-icons white">school</i>                            
+                </button> 
+                 </div>
+                 <div class="col-md-2">
+                <button md-mini-fab class="black" (click)="changeComapanyPage(page.Contact)">
+                    <i class="material-icons white">contact_mail</i>                            
+                </button> 
+                 </div>
+            </md-grid-tile-footer>
+            
+        </md-grid-tile>
+    </md-grid-list>
+</div>
